@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/mediaQuery.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/Login.css">
+    <link rel="stylesheet" href="./css/signUp.css">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- ####################################### main-header ########################################## -->
+    <header class="main-header">
+        <div class="first-header">
+            <div class="content">
+                <a href="#">SAVE MORE ON APP</a>
+                <a href="#">SAVE MORE ON APP</a>
+                <a href="#">SAVE MORE ON APP</a>
+                <a href="#">SAVE MORE ON APP</a>
+            </div>
+            <div class="daraz-header-logo">
+                <span> <img src="./assets/sideLogo.png" alt="daraz-logo"> Save on App </span>
+            </div>
+        </div>
+
+        <!-- ################################# second-header ################################# -->
+        <div class="second-header">
+            <div class="second-header-img">
+                <img src="./assets/darazLogo.png" alt="">
+            </div>
+            <div class="second-header-searchBar">
+                <button class="search-btn"> <input type="text" id="searchClear" placeholder="Search in Daraz">
+                    <i class="fa fa-search" onclick="clearFunction()"></i></button>
+            </div>
+
+
+            <!-- ################################# Login Section ################################# -->
+
+            <div class="second-header-login">
+                <button class="login_btn" onclick="document.getElementById('login').style.display='block'"> <i
+                        class="fa fa-user"></i>Login</button>
+
+                <div id="login" class="loginForm">
+
+                    <form class="loginForm-content animate" action="index.html" method="post">
+
+                        <div class="loginContainer">
+                            <label for="username"><b>Username</b></label>
+                            <input type="text" placeholder="Enter Username" name="username" required>
+
+                            <label for="pswd"><b>Password</b></label>
+                            <input type="password" placeholder="Enter Password" name="pswd" required>
+
+                            <button class="loginBtn" type="submit">Login</button>
+                            <label>
+                                <input type="checkbox" checked="checked" name="remember"> Remember me
+                            </label>
+                        </div>
+
+                        <div class="loginContainer" style=" margin-bottom: 40px;">
+                            <button type="button" onclick="document.getElementById('login').style.display='none'"
+                                class="cancelbtn">Cancel</button>
+                            <span class="pswd" onclick="forgotPass()">Forgot <a href="#">password?</a></span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!--############################ SignUp Section ######################-->
+            <div class="second-header-signUp">
+                <button class="signUpFormBtn" onclick="document.getElementById('signUp').style.display='block'"
+                    style="width:auto;">Sign Up</button>
+
+                <div id="signUp" class="signUpForm">
+                    <span onclick="document.getElementById('signUp').style.display='none'" class="close"
+                        title="Close signUpForm">&times;</span>
+                    <form class="signUpForm-content" action="index.html">
+                        <div class="container">
+                            <h1>Sign Up</h1>
+                            <hr>
+                            <label for="email"><b>Email</b></label>
+                            <input type="text" placeholder="Enter Email Id" name="email" required>
+
+                            <label for="password"><b>Password</b></label>
+                            <input type="password" placeholder="Enter Password" name="password" required>
+
+                            <label for="password-repeat"><b>Repeat Password</b></label>
+                            <input type="password" placeholder="Repeat Password" name="password-repeat" required>
+
+                            <label>
+                                <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px">
+                                Remember me
+                            </label>
+
+                            <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms &
+                                    Privacy</a>.</p>
+
+                            <div class="clear">
+                                <button type="button" onclick="document.getElementById('signUp').style.display='none'"
+                                    class="cancelbtn signUpFormBtn">Cancel</button>
+                                <button type="submit" class="signupbtn signUpFormBtn">Sign Up</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+
+            <!-- ################################# Language Section ################################# -->
+            <div class="second-header-lang">
+                <i class="fa fa-globe" aria-hidden="true"></i>
+                <select name="lang" id="lang">
+                    <option value="eng">Eng</option>
+                    <option value="ur">Urdu</option>
+                </select>
+            </div>
+
+            <!-- ######################-- Shopping Cart ################################# -->
+            <div class="second-header-shopping-cart">
+                <i class="fa fa-shopping-cart"></i>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- ######################-- daraz-slider-Section ###################### -->
+    <div class="daraz-slider-container">
+        <div class="side-navBar">
+            <div><a href="#"><i class="fa-solid fa-shirt"></i>Groceries & Pets</a></div>
+            <div><a href="#"><i class="fa-solid fa-shirt"></i>Health & Beauty</a></div>
+            <div><a href="#"><i class="fa-solid fa-shirt"></i>Men's Fashion</a></div>
+            <div><a href="#"><i class="fa-solid fa-shirt"></i>Women's Fashion</a></div>
+            <div><a href="#"><i class="fa-solid fa-shirt"></i>Mother & Baby</a></div>
+            <div><a href="#"><i class="fa-solid fa-car"></i>Home & Lifestyle</a></div>
+            <div><a href="#"><i class="fa-solid fa-tv"></i>Electronic Devices</a></div>
+            <div><a href="#"><i class="fa-solid fa-tv"></i>Electronic Accessories</a></div>
+            <div><a href="#"><i class="fa-solid fa-tv"></i>TV & Home Appliances</a></div>
+            <div><a href="#"><i class="fa-solid fa-shirt"></i>Sports & Outdoor</a></div>
+            <div><a href="#"><i class="fa-solid fa-bag-shopping"></i>Watches, Bags & Jewellery</a></div>
+            <div><a href="#"><i class="fa-solid fa-bicycle"></i>Automotive & Motorbike</a></div>
+
+        </div>
+
+        <!-- ################################ slider start -->
+        <div class="slide-show">
+            <div class="main-carousel">
+                <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active" data-bs-interval="10000">
+                            <img src="./assets/img1.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item" data-bs-interval="2000">
+                            <img src="./assets/img2.png" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./assets/img3.jpg" class="d-block w-100" alt="...">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ############ Content Section ###################### -->
+    <div class="content-container">
+        <li><a href="#">Safe Payments</a></li>
+        <li><a href="#">Nationwide Delivery</a></li>
+        <li><a href="#">Free & Easy Returns</a></li>
+        <li><a href="#">Best Price Guaranteed</a></li>
+        <li><a href="#">100% Authentic Products</a></li>
+        <li><a href="#">Daraz Verified</a></li>
+    </div>
+
+    <!-- #################################### Image Section -->
+    <div class="img-sec">
+        <img src="./assets/centerImg.png">
+    </div>
+    </br>
+    <!-- ################################## Cateogry section -->
+    <h4> Category</h4>
+    <div class="category-container">
+        <div class="category">
+            <div class="category-row">
+                <div class="category-card">
+                    <div>
+                        <img src="./assets/cat1.jpeg">
+                    </div>
+                    <div>Abcd</div>
+                </div>
+                <div class="category-card">
+                    <div>
+                        <img src="./assets/cat2.jpeg">
+                    </div>
+                    <div>Abcd</div>
+                </div>
+                <div class="category-card">
+                    <div>
+                        <img src="./assets/cat4.jpeg">
+                    </div>
+                    <div>Abcd</div>
+                </div>
+                <div class="category-card">
+                    <div>
+                        <img src="./assets/cat6.jpeg" alt="">
+                    </div>
+                    <div>Abcd</div>
+                </div>
+                <div class="category-card">
+                    <div>
+                        <img src="./assets/cat7.jpeg" alt="">
+                    </div>
+                    <div>Abcd</div>
+                </div>
+                <div class="category-card">
+                    <div>
+                        <img src="./assets/cat8.jpeg">
+                    </div>
+                    <div>Abcd</div>
+                </div>
+                <div class="category-card">
+                    <div>
+                        <img src="./assets/cat3.webp">
+                    </div>
+                    <div>Abcd</div>
+                </div>
+                <div class="category-card">
+                    <div>
+                        <img src="./assets/cat9.webp">
+                    </div>
+                    <div>Abcd</div>
+                </div>
+                <div class="category-card">
+                    <div>
+                        <img src="./assets/cat1.jpeg">
+                    </div>
+                    <div>Abcd</div>
+                </div>
+                <div class="category-card">
+                    <div>
+                        <img src="./assets/cat2.jpeg">
+                    </div>
+                    <div>Abcd</div>
+                </div>
+                <div class="category-card">
+                    <div>
+                        <img src="./assets/cat4.jpeg">
+                    </div>
+                    <div>Abcd</div>
+                </div>
+                <div class="category-card">
+                    <div>
+                        <img src="./assets/cat6.jpeg" alt="">
+                    </div>
+                    <div>Abcd</div>
+                </div>
+                <div class="category-card">
+                    <div>
+                        <img src="./assets/cat7.jpeg" alt="">
+                    </div>
+                    <div>Abcd</div>
+                </div>
+                <div class="category-card">
+                    <div>
+                        <img src="./assets/cat8.jpeg">
+                    </div>
+                    <div>Abcd</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    </br>
+    <!-- 
+  ###################### Flash Sale ############ -->
+    <h4>Flash Sale</h4>
+    <div class="flashSale-container">
+        <div class="flashSale-heading">
+        </div>
+        <div class="flashSale-bg">
+            <div class="flashSale-content">
+                <div class="left-items">
+                    <div class="on-sale"> On Sale Now</div>
+                    <div class="flashSale-time"> Ending In</div>
+                    <div id="hour"> 04</div> :
+                    <div id="min"> 30</div> :
+                    <div id="sec"> 12</div>
+                </div>
+                <div class="right-items">
+                    <button onclick="shopmore()"> Shop More</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ################## Card Section###########
+     -->
+    <div class="card-section">
+        <div class="row">
+            <div class="card-container">
+                <img src="./assets/cat9.webp">
+                <p>Universal Wired Handsfree with mic Earphone For All</p>
+                <span>Rs. 290</span><br />
+                <del>Rs.1000</del>
+                <span class="price_cut">-71%</span>
+            </div>
+            <div class="card-container">
+                <img src="./assets/cat9.webp">
+                <p>Universal Wired Handsfree with mic Earphone For All</p>
+                <span>Rs. 290</span><br />
+                <del>Rs.1000</del>
+                <span class="price_cut">-71%</span>
+            </div>
+            <div class="card-container">
+                <img src="./assets/cat9.webp">
+                <p>Universal Wired Handsfree with mic Earphone For All</p>
+                <span>Rs. 290</span><br />
+                <del>Rs.1000</del>
+                <span class="price_cut">-71%</span>
+            </div>
+            <div class="card-container">
+                <img src="./assets/cat9.webp">
+                <p>Universal Wired Handsfree with mic Earphone For All</p>
+                <span>Rs. 290</span><br />
+                <del>Rs.1000</del>
+                <span class="price_cut">-71%</span>
+            </div>
+            <div class="card-container">
+                <img src="./assets/cat9.webp">
+                <p>Universal Wired Handsfree with mic Earphone For All</p>
+                <span>Rs. 290</span><br />
+                <del>Rs.1000</del>
+                <span class="price_cut">-71%</span>
+            </div>
+            <div class="card-container">
+                <img src="./assets/cat9.webp">
+                <p>Universal Wired Handsfree with mic Earphone For All</p>
+                <span>Rs. 290</span><br />
+                <del>Rs.1000</del>
+                <span class="price_cut">-71%</span>
+            </div>
+        </div>
+    </div>
+    </br>
+
+    <!-- ############ ForYou Category ############ -->
+    <h4>Just For You</h4>
+    <div class="foryou-container">
+        <div class="foryou">
+            <div class="image-sec"> <img src="./assets/cat9.webp">
+            </div>
+            <div class="des-sec">
+                <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit...</div>
+                <div class="price">Rs: 7000</div>
+                <div class="cut-price"> <del>Rs.1000</del> <span>-71%</span></div>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+            </div>
+        </div>
+
+        <div class="foryou">
+            <div class="image-sec"> <img src="./assets/cat9.webp">
+            </div>
+            <div class="des-sec">
+                <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit...</div>
+                <div class="price">Rs: 7000</div>
+                <div class="cut-price"> <del>Rs.1000</del> <span>-71%</span></div>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+            </div>
+        </div>
+        <div class="foryou">
+            <div class="image-sec"> <img src="./assets/cat9.webp">
+            </div>
+            <div class="des-sec">
+                <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit...</div>
+                <div class="price">Rs: 7000</div>
+                <div class="cut-price"> <del>Rs.1000</del> <span>-71%</span></div>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+            </div>
+        </div>
+        <div class="foryou">
+            <div class="image-sec"> <img src="./assets/cat9.webp">
+            </div>
+            <div class="des-sec">
+                <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit...</div>
+                <div class="price">Rs: 7000</div>
+                <div class="cut-price"> <del>Rs.1000</del> <span>-71%</span></div>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+            </div>
+        </div>
+        <div class="foryou">
+            <div class="image-sec"> <img src="./assets/cat9.webp">
+            </div>
+            <div class="des-sec">
+                <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit...</div>
+                <div class="price">Rs: 7000</div>
+                <div class="cut-price"> <del>Rs.1000</del> <span>-71%</span></div>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+            </div>
+        </div>
+        <div class="foryou">
+            <div class="image-sec"> <img src="./assets/cat9.webp">
+            </div>
+            <div class="des-sec">
+                <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit...</div>
+                <div class="price">Rs: 7000</div>
+                <div class="cut-price"> <del>Rs.1000</del> <span>-71%</span></div>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+            </div>
+        </div>
+        <div class="foryou">
+            <div class="image-sec"> <img src="./assets/cat9.webp">
+            </div>
+            <div class="des-sec">
+                <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit...</div>
+                <div class="price">Rs: 7000</div>
+                <div class="cut-price"> <del>Rs.1000</del> <span>-71%</span></div>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+            </div>
+        </div>
+        <div class="foryou">
+            <div class="image-sec"> <img src="./assets/cat9.webp">
+            </div>
+            <div class="des-sec">
+                <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit...</div>
+                <div class="price">Rs: 7000</div>
+                <div class="cut-price"> <del>Rs.1000</del> <span>-71%</span></div>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+            </div>
+        </div>
+        <div class="foryou">
+            <div class="image-sec"> <img src="./assets/cat9.webp">
+            </div>
+            <div class="des-sec">
+                <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit...</div>
+                <div class="price">Rs: 7000</div>
+                <div class="cut-price"> <del>Rs.1000</del> <span>-71%</span></div>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+            </div>
+        </div>
+        <div class="foryou">
+            <div class="image-sec"> <img src="./assets/cat9.webp">
+            </div>
+            <div class="des-sec">
+                <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit...</div>
+                <div class="price">Rs: 7000</div>
+                <div class="cut-price"> <del>Rs.1000</del> <span>-71%</span></div>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+            </div>
+        </div>
+        <div class="foryou">
+            <div class="image-sec"> <img src="./assets/cat9.webp">
+            </div>
+            <div class="des-sec">
+                <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit...</div>
+                <div class="price">Rs: 7000</div>
+                <div class="cut-price"> <del>Rs.1000</del> <span>-71%</span></div>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+            </div>
+        </div>
+        <div class="foryou">
+            <div class="image-sec"> <img src="./assets/cat9.webp">
+            </div>
+            <div class="des-sec">
+                <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit...</div>
+                <div class="price">Rs: 7000</div>
+                <div class="cut-price"> <del>Rs.1000</del> <span>-71%</span></div>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+            </div>
+        </div>
+    </div>
+   
+
+    <!-- 
+####################################### load More ########################################## -->
+    </br>
+    <div class="load-more">
+        <button>Load More</button>
+    </div>
+
+    </br>
+
+    <!-- ##################################### footer ##########################################  -->
+     <div class="footer">
+        <div class="c-care">
+            <ul>
+                <h2>Customer Care</h2>
+                <li>Help Center</li>
+                <li>How to Buy</li>
+                <li>Corporate & Bulk Purchasing</li>
+                <li>Returns & Refunds</li>
+                <li>Daraz Shop</li>
+                <li>Contact Us</li>
+                <li>Purchase Protection</li>
+                <li>Daraz Pick up Points</li>
+                <h2>Make Money With Us</h2>
+                <li>Daraz University</li>
+                <li>Sell on Daraz</li>
+                <li>Join Daraz Affiliate Program</li>
+            </ul>
+        </div>
+        <div class="daraz">
+            <ul>
+                <h2>Daraz</h2>
+                <li>About Us</li>
+                <li>Digital Payments</li>
+                <li>Daraz Donates</li>
+                <li>Daraz Blog</li>
+                <li>Terms & Conditions</li>
+                <li>Privacy Policy</li>
+                <li>NTN Number : 4012118-6</li>
+                <li>STRN Number : 1700401211818</li>
+                <li>Online Shopping App</li>
+                <li>Online Grocery Shopping</li>
+                <li>Daraz Exclusive</li>
+                <li>How to shop on Daraz</li>
+            </ul>
+        </div>
+        <div class="daraz">
+            <ul>
+                <h2>Daraz International</h2>
+                <li>Pakistan</li>
+                <li>Bangladesh</li>
+                <li>India</li>
+
+            </ul>
+
+            <ul>
+                <h2>Payment Method</h2>
+                <li>Cash on delivery</li>
+                <li>Visa</li>
+                <li>HBL</li>
+            </ul>
+
+
+            <ul>
+                <h2>Verified</h2>
+                <li>PCI</li>
+            </ul>
+        </div>
+        <div class="daraz">
+            <ul>
+                <h2>Exclusive Deals and Offers!</h2>
+                <li>Pakistan</li>
+                <li>Bangladesh</li>
+                <li>India</li>
+
+            </ul>
+        </div>
+
+    </div> 
+
+
+
+    <script src="./Js/index.js"></script>
+    <script src="./Js/Login.js"></script>
+    <script src="./Js/Shopmore.js"></script>
+    <script src="./Js/signUp.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src=" https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
+        </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
